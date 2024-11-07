@@ -4,8 +4,8 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import MoviesList from "./pages/MoviesList";
 import TVShowsList from "./pages/TVShowsList";
+import Detail from "./pages/Detail";
 
-// import People from "./pages/People";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/tv/top_rated", 
         element: <TVShowsList type="Top Rated" />,
+      },
+      {
+        path: "/movie/:id", 
+        element: <Detail />,
       },
     ],
   },

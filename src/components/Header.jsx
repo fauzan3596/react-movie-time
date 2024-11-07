@@ -28,7 +28,7 @@ function Header(props) {
       <RiMovie2Line className='img-logo' />
         <h1 className="display-4 fw-bold mb-3">It's Movie Time</h1>
         <p className="lead mb-5" style={{ maxWidth: '600px', margin: '0 auto' }}>
-          Movie Time is your ultimate destination for discovering, exploring, and enjoying movies and TV shows. It provides a seamless experience with access to trending and popular movies, detailed descriptions, genres, trailers, and more. Whether you're in the mood for a blockbuster or a hidden gem, Movie Time brings the world of movies right to your fingertips.
+          Movie Time is your ultimate destination for discovering, exploring, and enjoying movies and TV shows. Whether you're in the mood for a blockbuster or a hidden gem, Movie Time brings the world of movies right to your fingertips.
         </p>
         <button className="btn btn-danger btn-lg">Explore Now</button>
       </div>

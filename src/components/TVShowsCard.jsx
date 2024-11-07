@@ -10,7 +10,7 @@ function TVShowsCard(props) {
                     const { id, name, poster_path, first_air_date } = tvShow;
                     return (
                         <div className="col mb-1" key={id}>
-                            <div className="card h-100 text-white bg-dark border-dark">
+                            <div className="card h-100 text-white bg-dark border-0">
                                 <img src={`https://image.tmdb.org/t/p/original${poster_path}`}
                                     alt={name}
                                     className='card-img-top rounded-4' style={{minHeight: "23rem"}} />

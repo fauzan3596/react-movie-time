@@ -77,14 +77,30 @@ header {
 .discover-desc {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-          line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .card-img-overlay {
-  background-image: linear-gradient(210deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  background-image: linear-gradient(210deg, rgba(255, 255, 255, 0) 0%, rgba(20, 20, 20, .8) 100%);
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: transform 0.5s;
+  color: gray;
+}
+
+.custom-arrow:hover {
+  color: white;
+  transform: scale(1.2) translateY(-50%);
 }
 
 /* footer {

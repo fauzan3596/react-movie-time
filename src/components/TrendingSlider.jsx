@@ -3,8 +3,8 @@ import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-function DiscoverMovieSlider(props) {
-    const { movies, genreName, getYear } = props;
+function TrendingSlider(props) {
+    const { trendingMovies, trendingGenreName, getYear } = props;
 
     const PrevArrow = (props) => {
         const { onClick } = props;
@@ -81,8 +81,8 @@ function DiscoverMovieSlider(props) {
         <div className="p-0">
             <Slider {...settings}>
                 {
-                    movies.map((movie, index) => {
-                        const { id, title, poster_path, release_date, overview } = movie;
+                    trendingMovies.map((trending, index) => {
+                        const { id, title, poster_path, release_date, overview } = trending;
                         return (
                             <div className="p-2" key={id}>
                                 <div className="card h-100 text-white bg-dark border-0">
@@ -97,7 +97,7 @@ function DiscoverMovieSlider(props) {
                                                 boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
                                                 border: "none",
                                                 width: "8.1rem"
-                                            }}>{genreName[index]}</button>
+                                            }}>{trendingGenreName[index]}</button>
                                             <h5 className="card-title" style={{
                                                 whiteSpace: 'nowrap',
                                                 overflow: 'hidden',
@@ -118,4 +118,4 @@ function DiscoverMovieSlider(props) {
     )
 }
 
-export default DiscoverMovieSlider
+export default TrendingSlider
