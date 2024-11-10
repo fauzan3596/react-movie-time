@@ -11,8 +11,8 @@ function MovieCard(props) {
                     const { id, title, poster_path, release_date } = movie;
                     return (
                         <div className="col mb-1" key={id}>
-                            <Link to={`/movie/${id}`}>
-                                <div className="card h-100 text-white bg-dark border-0">
+                            <Link to={`/movie/${id}`} className='text-decoration-none'>
+                                <div className="card h-100 text-white bg-transparent border-0">
                                     <img src={`https://image.tmdb.org/t/p/original${poster_path}`}
                                         alt={title}
                                         className='card-img-top rounded-4' />

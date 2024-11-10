@@ -3,8 +3,11 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import MoviesList from "./pages/MoviesList";
-import TVShowsList from "./pages/TVShowsList";
+import SearchResult from "./pages/SearchResult";
 import Detail from "./pages/Detail";
+import About from "./pages/About";
+import RandomMovieDetail from "./pages/RandomMovieDetail";
+import Favorite from "./pages/Favorite";
 
 
 const router = createBrowserRouter([
@@ -33,24 +36,24 @@ const router = createBrowserRouter([
         element: <MoviesList type="Top Rated" />,
       },
       {
-        path: "/tv/popular", 
-        element: <TVShowsList type="Popular" />,
-      },
-      {
-        path: "/tv/airing_today", 
-        element: <TVShowsList type="Airing Today" />,
-      },
-      {
-        path: "/tv/on_the_air", 
-        element: <TVShowsList type="On TV" />,
-      },
-      {
-        path: "/tv/top_rated", 
-        element: <TVShowsList type="Top Rated" />,
-      },
-      {
         path: "/movie/:id", 
         element: <Detail />,
+      },
+      {
+        path: "/search/movie", 
+        element: <SearchResult />,
+      },
+      {
+        path: "/about", 
+        element: <About />,
+      },
+      {
+        path: "/surprise me", 
+        element: <RandomMovieDetail />,
+      },
+      {
+        path: "/favorite",
+        element: <Favorite />,
       },
     ],
   },

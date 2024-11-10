@@ -2,8 +2,9 @@ import React from 'react'
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { Link } from 'react-router-dom';
 
-function TrendingSlider(props) {
+function TrendingMovieSlider(props) {
     const { trendingMovies, trendingGenreName, getYear } = props;
 
     const PrevArrow = (props) => {
@@ -85,30 +86,32 @@ function TrendingSlider(props) {
                         const { id, title, poster_path, release_date, overview } = trending;
                         return (
                             <div className="p-2" key={id}>
-                                <div className="card h-100 text-white bg-dark border-0">
-                                    <img src={`https://image.tmdb.org/t/p/original${poster_path}`}
-                                        alt={title}
-                                        className='card-img rounded-5' />
-                                    <div className="card-img-overlay rounded-5">
-                                        <div className="card-body d-flex flex-column justify-content-end px-0 py-0 h-100">
-                                            <button className="btn rounded-5 text-white mb-2" disabled style={{
-                                                backgroundColor: "rgba(50, 50, 50, .8)",
-                                                backdropFilter: "blur(10px)",
-                                                boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-                                                border: "none",
-                                                width: "8.1rem"
-                                            }}>{trendingGenreName[index]}</button>
-                                            <h5 className="card-title" style={{
-                                                whiteSpace: 'nowrap',
-                                                overflow: 'hidden',
-                                                textOverflow: 'ellipsis'
-                                            }}>{`${title} (${getYear(release_date)})`}</h5>
-                                            <div className="card-text discover-desc">
-                                                <p>{overview}</p>
+                                <Link to={`/movie/${id}`} className='text-decoration-none'>
+                                    <div className="card h-100 text-white bg-dark border-0 rounded-5">
+                                        <img src={`https://image.tmdb.org/t/p/original${poster_path}`}
+                                            alt={title}
+                                            className='card-img rounded-5' />
+                                        <div className="card-img-overlay rounded-5">
+                                            <div className="card-body d-flex flex-column justify-content-end px-0 py-0 h-100">
+                                                <button className="btn rounded-5 text-white mb-2" disabled style={{
+                                                    backgroundColor: "rgba(50, 50, 50, .8)",
+                                                    backdropFilter: "blur(10px)",
+                                                    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                                                    border: "none",
+                                                    width: "8.1rem"
+                                                }}>{trendingGenreName[index]}</button>
+                                                <h5 className="card-title" style={{
+                                                    whiteSpace: 'nowrap',
+                                                    overflow: 'hidden',
+                                                    textOverflow: 'ellipsis'
+                                                }}>{`${title} (${getYear(release_date)})`}</h5>
+                                                <div className="card-text discover-desc">
+                                                    <p>{overview}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             </div>
                         )
                     })
@@ -118,4 +121,4 @@ function TrendingSlider(props) {
     )
 }
 
-export default TrendingSlider
+export default TrendingMovieSlider

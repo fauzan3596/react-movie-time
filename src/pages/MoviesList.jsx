@@ -52,7 +52,10 @@ function MoviesList(props) {
         return new Date(date).toLocaleDateString("en-US", options)
     }
     return (
-        <div className='container-fluid text-white bg-dark'>
+        <div className='container-fluid text-white' style={{
+            background: "rgb(35, 52, 88)",
+            background: "linear-gradient(150deg, rgba(35, 52, 88, 1) 0%, rgba(17, 24, 39, 1) 100%)"
+        }}>
             <h2 className='py-3 mx-3' >{type} Movies</h2>
             <MovieCard movies={movies} showFormattedDate={showFormattedDate} />
         </div>
